@@ -213,6 +213,20 @@ case class Hermes(locale: String = HermesConstants.ConstantDefaultLocale) extend
       l.filter(_.isLeft).map(_.left.toOption.get)
     }
   }
+
+  /**
+   * Generates random boolean.
+   */
+  object Boolean {
+    /**
+     * Example: "bool -> true".
+     * @return a random boolean.
+     */
+    def bool: Boolean = {
+      Random.nextBoolean
+    }
+  }
+
 }
 sealed trait NumberSign
 case object Positive extends NumberSign

@@ -18,6 +18,7 @@ package com.stratio.hermes.utils
 
 import java.security.InvalidParameterException
 import java.util.NoSuchElementException
+
 import com.stratio.hermes.exceptions.HermesException
 import org.junit.runner.RunWith
 import org.scalacheck.Prop.forAll
@@ -183,6 +184,13 @@ class HermesTest extends FlatSpec with Matchers {
     val hermes = Hermes()
     //scalastyle:off
     hermes.Geo.parseErrorList(hermes.Geo.geoModel).length should be(2)
+    //scalastyle:on
+  }
+
+  it should "when you call hermes Boolean must give us a random boolean value" in {
+    val hermes = Hermes()
+    //scalastyle:off
+    assert(hermes.Boolean.bool.isInstanceOf[Boolean])
     //scalastyle:on
   }
 
